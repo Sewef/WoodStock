@@ -1,0 +1,16 @@
+[
+{
+  "modid": "woodstock",
+  "name": "WoodStock",
+  "description": "Stripped log for 1.12",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Sewef"],
+  "credits": "Mojang (model and textures)",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

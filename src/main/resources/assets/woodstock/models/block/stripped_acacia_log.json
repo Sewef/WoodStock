@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "woodstock:blocks/stripped_acacia_log_top",
+        "side": "woodstock:blocks/stripped_acacia_log"
+    }
+}
