@@ -4,6 +4,7 @@ import com.sewef.woodstock.init.WoodStockBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
@@ -46,8 +47,13 @@ public class WoodStockEvent {
                     if (axis != null && variant != null) {
                         if (WoodStockBlocks.variants.contains(state.getValue(variant).toString())) {
                             int i = WoodStockBlocks.variants.indexOf(state.getValue(variant).toString());
-                            player.swingArm(event.getHand());
-                            world.playSound(player, pos, SoundEvents.BLOCK_WOOD_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                            
+                            if (world.isRemote) {
+                                player.swingArm(event.getHand());
+                                world.playSound(player, pos, SoundEvents.BLOCK_WOOD_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                                Minecraft.getMinecraft().effectRenderer.addBlockDestroyEffects(pos, state);
+                            }
+                            
                             world.setBlockState(pos, WoodStockBlocks.strippedLogs.get(i).getDefaultState().withProperty(axis, state.getValue(axis)), 0b1011);
                             stack.damageItem(1, player);
                         }
