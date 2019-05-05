@@ -64,6 +64,7 @@ public class BlockStrippedLog extends BlockLog {
     
     @Override
     protected BlockStateContainer createBlockState() {
-        return new BlockStateContainer(this, new IProperty[] {LOG_AXIS});
+        return new BlockStateContainer.Builder(this).add(LOG_AXIS).build();
+        //return new BlockStateContainer(this, new IProperty[] {LOG_AXIS});
     }
 }
