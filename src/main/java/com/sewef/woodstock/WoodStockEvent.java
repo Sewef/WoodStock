@@ -26,7 +26,7 @@ public class WoodStockEvent {
         EntityPlayer player = event.getEntityPlayer();
         ItemStack stack = event.getItemStack();
         
-        if (getHarvestLevel(stack, "axe", player, state) >= 0) {
+        if (stack.getItem().getHarvestLevel(stack, "axe", player, state) >= 0) {
             Block block = state.getBlock();
             
             if (block == Blocks.LOG || block == Blocks.LOG2) {
