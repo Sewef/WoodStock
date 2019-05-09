@@ -7,5 +7,5 @@ before_install:
  - rm forge-1.12.2-14.23.5.2820-mdk.zip
 install: ./gradlew setupCiWorkspace
 script: 
- - chmod +x gradlew
+ - chmod +x ./gradlew
  - ./gradlew build
