@@ -2,10 +2,9 @@ language: java
 jdk: oraclejdk8
 dist: trusty
 before_install:
+ - chmod +x ./gradlew
  - wget https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.5.2820/forge-1.12.2-14.23.5.2820-mdk.zip
  - unzip -n forge-1.12.2-14.23.5.2820-mdk.zip
  - rm forge-1.12.2-14.23.5.2820-mdk.zip
 install: ./gradlew setupCiWorkspace
-script: 
- - chmod +x ./gradlew
- - ./gradlew build
+script: ./gradlew build
