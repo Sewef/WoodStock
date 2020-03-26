@@ -16,38 +16,47 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Mod.EventBusSubscriber(modid=WoodStock.MODID)
-public class WoodStockBlocks {
+public class WoodStockBlocks
+{
     public static final List<String> variants = Arrays.asList("oak", "spruce", "birch", "jungle", "acacia", "dark_oak");
     public static List<Block> strippedLogs = new ArrayList<>();
 	
-    public static void init() {
-        for (String variant : variants) {
+    public static void init()
+    {
+        for (String variant : variants) 
+        {
             strippedLogs.add(new BlockStrippedLog(variant));
         }
     }
 
     @SubscribeEvent
-    public static void registerBlocks(RegistryEvent.Register<Block> event) {
-        for (Block block : strippedLogs) {
+    public static void registerBlocks(RegistryEvent.Register<Block> event)
+    {
+        for (Block block : strippedLogs)
+        {
             event.getRegistry().register(block);
         }
     }
 
     @SubscribeEvent
-    public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
-        for (Block block : strippedLogs) {
+    public static void registerItemBlocks(RegistryEvent.Register<Item> event)
+    {
+        for (Block block : strippedLogs)
+        {
             event.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
         }
     }
 
     @SubscribeEvent
-    public static void registerRenders(ModelRegistryEvent event) {
+    public static void registerRenders(ModelRegistryEvent event)
+    {
         for (Block block : strippedLogs) {
             registerRender(Item.getItemFromBlock(block));
         }
     }
 
-    public static void registerRender(Item item) {
+    public static void registerRender(Item item)
+    {
         ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation( item.getRegistryName(), "inventory"));
     }
 }

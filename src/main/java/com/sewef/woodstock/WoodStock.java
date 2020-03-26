@@ -9,22 +9,24 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import org.apache.logging.log4j.Logger;
 
 @Mod(modid = WoodStock.MODID, version = WoodStock.VERSION)
-public class WoodStock {
+public class WoodStock
+{
 	public static final String MODID = "woodstock";
 	public static final String VERSION = "1.2";
 
-        private static Logger logger;
+    private static Logger logger;
         
-        @EventHandler
-        public void preInit(FMLPreInitializationEvent event)
-        {
-            logger = event.getModLog();
-            WoodStockBlocks.init();
-        }
+    @EventHandler
+    public void preInit(FMLPreInitializationEvent event)
+    {
+        logger = event.getModLog();
+        WoodStockBlocks.init();
+    }
         
 	@EventHandler
-	public void init(FMLInitializationEvent event) {
-            MinecraftForge.EVENT_BUS.register(new WoodStockEvent());
-            logger.info("Making hot movies about trees...");
+	public void init(FMLInitializationEvent event)
+	{
+        MinecraftForge.EVENT_BUS.register(new WoodStockEvent());
+        logger.info("Making hot movies about trees...");
 	}
 }
