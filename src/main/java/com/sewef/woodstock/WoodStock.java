@@ -12,7 +12,7 @@ import org.apache.logging.log4j.Logger;
 public class WoodStock
 {
 	public static final String MODID = "woodstock";
-	public static final String VERSION = "1.2";
+	public static final String VERSION = "1.3";
 
     private static Logger logger;
         

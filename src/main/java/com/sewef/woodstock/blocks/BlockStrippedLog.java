@@ -11,7 +11,7 @@ public class BlockStrippedLog extends BlockLog {
     
     public BlockStrippedLog(String variant) {
         super();
-        setDefaultState(blockState.getBaseState().withProperty(LOG_AXIS, BlockLog.EnumAxis.Y));
+        setDefaultState(this.blockState.getBaseState().withProperty(LOG_AXIS, BlockLog.EnumAxis.Y));
         setUnlocalizedName("stripped_" +variant+ "_log");
         setRegistryName("stripped_" +variant+ "_log");
     }
